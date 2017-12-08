@@ -32,225 +32,8 @@
 </head>
 
 <body ontouchstart>
-<div class="ui-dialog" id="editDetail"><!--编辑框-->
-                <div class="ui-form ui-border-t">
-        <form action="#" method="post" id="collect-activity-info" enctype="multipart/form-data">
-            <div class="ui-form-item ui-border-b">
-                <label for="activity_name">活动名称</label>
-                <input style="height:100%;" id="activity_name" name="activity_name" value="" placeholder="什么活动(0—0)" class="activity_info" type="text" onFocus="this.placeholder='';" onBlur="if(this.value == ''){this.placeholder = '什么活动(0—0)';} checkText('activity_name');"/><a class="ui-icon-warn-block"></a>
-            </div>
-
-            <div class="ui-form-item ui-border-b">
-                <label for="activity_place">活动地点</label>
-                <input style="height:100%;" id="activity_place" name="activity_place" value="" placeholder="在哪举办(0—0)" class="activity_info" type="text" onFocus="this.placeholder='';" onBlur="if(this.value == ''){this.placeholder = '在哪举办(0—0)';} checkText('activity_dest')"/><a class="ui-icon-warn-block"></a>
-            </div>
-
-            <div class="ui-form-item ui-border-b">
-                <label for="organization">组织单位</label>
-                <input style="height:100%;text-overflow: ellipsis;" id="organization" name="organization" class="organization" value="" readonly="readonly"   type="text" placeholder="请选择..."/>
-            </div>
-
-            <div class="ui-dialog formdetail" style="height: 1000px;">
-                <div class="ui-dialog-cnt" style="width: 19%;position: relative;left: 12.5%;top: -15%;">
-
-                    <header class="ui-dialog-hd ui-border-b">
-                        <h1>活动组织单位</h1>
-                        <!-- <i class="ui-dialog-close" data-role="button"></i> -->
-                    </header>
-
-                    <div class="ui-dialog-bd" style="overflow-x:hidden; overflow-y:auto; width:85%;height:280px;">
-
-                        <div class="ui-form-item ui-form-item-switch ui-border-b">
-                            <p>学校</p>
-                            <label class="ui-switch">
-                                <input  name="org[]" class="org" value="sch" type="checkbox">
-                            </label>
-                        </div>
-
-                        <div class="ui-form-item ui-form-item-switch ui-border-b">
-                            <p>信息与通信工程学院</p>
-                            <label class="ui-switch">
-                                <input  name="org[]" class="org" value="xt" type="checkbox">
-                            </label>
-                        </div>
-
-                        <div class="ui-form-item ui-form-item-switch ui-border-b">
-                            <p>计算机学院</p>
-                            <label class="ui-switch">
-                                <input  name="org[]" class="org" value="cs" type="checkbox">
-                            </label>
-                        </div>
-
-                        <div class="ui-form-item ui-form-item-switch ui-border-b">
-                            <p>电子工程学院</p>
-                            <label class="ui-switch">
-                                <input  name="org[]" class="org" value="ee" type="checkbox">
-                            </label>
-                        </div>
-
-                        <div class="ui-form-item ui-form-item-switch ui-border-b">
-                            <p>理学院</p>
-                            <label class="ui-switch">
-                                <input  name="org[]" class="org" value="lxy" type="checkbox">
-                            </label>
-                        </div>
-
-                        <div class="ui-form-item ui-form-item-switch ui-border-b">
-                            <p>自动化学院</p>
-                            <label class="ui-switch">
-                                <input  name="org[]" class="org" value="zdh" type="checkbox">
-                            </label>
-                        </div>
-
-                        <div class="ui-form-item ui-form-item-switch ui-border-b">
-                            <p>软件学院</p>
-                            <label class="ui-switch">
-                                <input  name="org[]" class="org" value="rj" type="checkbox">
-                            </label>
-                        </div>
-
-                        <div class="ui-form-item ui-form-item-switch ui-border-b">
-                            <p>数字媒体与设计艺术学院</p>
-                            <label class="ui-switch">
-                                <input  name="org[]" class="org" value="shm" type="checkbox">
-                            </label>
-                        </div>
-
-                        <div class="ui-form-item ui-form-item-switch ui-border-b">
-                            <p>现代邮政学院</p>
-                            <label class="ui-switch">
-                                <input  name="org[]" class="org" value="yz" type="checkbox">
-                            </label>
-                        </div>
-
-                        <div class="ui-form-item ui-form-item-switch ui-border-b">
-                            <p>网络空间安全学院</p>
-                            <label class="ui-switch">
-                                <input  name="org[]" class="org" value="wa" type="checkbox">
-                            </label>
-                        </div>
-
-                        <div class="ui-form-item ui-form-item-switch ui-border-b">
-                            <p>经济管理学院</p>
-                            <label class="ui-switch">
-                                <input  name="org[]" class="org" value="jg" type="checkbox">
-                            </label>
-                        </div>
-
-                        <div class="ui-form-item ui-form-item-switch ui-border-b">
-                            <p>国际学院</p>
-                            <label class="ui-switch">
-                                <input  name="org[]" class="org" value="gy" type="checkbox">
-                            </label>
-                        </div>
-                        <div class="ui-form-item ui-form-item-switch ui-border-b">
-                            <p>人文学院</p>
-                            <label class="ui-switch">
-                                <input  name="org[]" class="org" value="rw" type="checkbox">
-                            </label>
-                        </div>
-
-                        <div class="ui-form-item ui-form-item-switch ui-border-b">
-                            <p>马克思主义学院</p>
-                            <label class="ui-switch">
-                                <input  name="org[]" class="org" value="mks" type="checkbox">
-                            </label>
-                        </div>
-
-                    </div>
-
-                    <div class="ui-dialog-ft">
-                        <button type="button" id="orgok" data-role="button">确定</button>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="ui-form-item ui-border-b">
-                <label>开始时间</label>
-                <input name="activity_start" class="activity_time" value="" readonly="readonly"   type="text"  placeholder="请选择..."/>
-            </div>
-
-            <div class="ui-form-item ui-border-b">
-                <label>结束时间</label>
-                <input name="activity_end" class="activity_time" value="" readonly="readonly"  type="text"  placeholder="请选择..."/>
-            </div>
-
-            <div class="ui-btn-wrap activity_img_wrap">
-                <input name="activity_img" value="" id="activity_img" class="ui-btn-lg activity_img" type="file" accept="image/png, image/jpeg, image/gif, image/jpg"/>
-                <label class="ui-btn-lg" for="activity_img">选择图片</label>
-            </div>
-
-            <div class="ui-form-item ui-form-item-switch ui-border-b">
-                <p>
-                    是否有德育分
-                </p>
-                <label class="ui-switch">
-                    <input name="score" id="score" type="checkbox" value="score"/>
-                </label>
-            </div>
-
-            <div class="ui-form-item ui-form-item-order ui-border-b addscore"  style="display: none;font-size: 14px;">
-                <label for="scoretxt">德育分分值</label>
-                <input style="height:100%;" name="scoretxt" id="scoretxt" type="text" value="" placeholder="整数/小数"/>
-                <a class="ui-icon-warn-block"></a>
-            </div>
-
-            <div class="ui-form-item ui-form-item-switch ui-border-b">
-                <p>
-                    是否需要收集报名学生信息
-                </p>
-                <label class="ui-switch">
-                    <input name="info" id="info" type="checkbox" value="info"/>
-                </label>
-            </div>
-
-            <div class="ui-form-item ui-form-item-order ui-border-b addlink" style="display: none;font-size: 14px;">
-                <label for="infotxt">报名链接</label>
-                <input style="height:100%;" name="infotxt" id="infotxt" type="text" value="" placeholder="易班/问卷星/腾讯问卷">
-                <a class="ui-icon-warn-block"></a>
-
-            </div>
-
-            <div class="ui-form-item ui-form-item-switch ui-border-b">
-                <p>
-                    是否需要抢票
-                </p>
-                <label class="ui-switch">
-                    <input name="ticket" id="ticket" type="checkbox" value="ticket"/>
-                </label>
-            </div>
-
-            <div class="ui-form-item ui-form-item-order ui-border-b addticket" style="display: none;font-size: 14px;">
-                <label for="ticket-time">抢票时间</label>
-                <input style="height:85%;"  class="activity_time" name="ticket-time" id="ticket-time" type="text" readonly="readonly" value="" placeholder="请选择...">
-            </div>
-
-            <div class="ui-form-item ui-form-item-order ui-border-b addticket" style="display: none;font-size: 14px;">
-                <label for="ticket-link">抢票链接</label>
-                <input style="height:100%;" name="ticket-link" id="ticket-link" type="text" value="" placeholder="易班/问卷星/腾讯问卷">
-                <a class="ui-icon-warn-block"></a>
-            </div>
-            <!-- 编辑的活动的id传递-->
-            <input id="actID" type="text" name="actID" style="display:none ;" value="">
-
-            <div class="ui-btn-wrap">
-                <input id="editSubmit" type="button" class="ui-btn-lg ui-btn-primary" value="发布"/>
-            </div>
-        </form>
-    </div>
-
-</div><!--编辑框结束-->
-<div class="ui-tab admin">
-    
-        <ul class="ui-tab-nav ui-border-b">
-            <li class="current">发布新活动</li>
-            <li>管理已发活动</li>
-        </ul>
-    <ul class="ui-tab-content" style="width:200%;"><!--nav的content部分-->
-        <li class="current"><!--发布新活动部分-->
-            <div id="container" style="height: 95%;">
-
+<input id="token" type="text" name="token" style="display:none ;" value=""><!--token-->
+<div id="EditBox" class="hidden"><!--编辑表单-->
     <div class="ui-form ui-border-t">
         <form action="#" method="post" id="collect-activity-info" enctype="multipart/form-data">
             <div class="ui-form-item ui-border-b">
@@ -268,8 +51,8 @@
                 <input style="height:100%;text-overflow: ellipsis;" id="organization" name="organization" class="organization" value="" readonly="readonly"   type="text" placeholder="请选择..."/>
             </div>
 
-            <div class="ui-dialog formdetail" style="height: 1000px;">
-                <div class="ui-dialog-cnt" style="width: 19%;position: relative;left: 12.5%;top: -15%;">
+            <div class="ui-dialog formdetail">
+                <div class="ui-dialog-cnt">
 
                     <header class="ui-dialog-hd ui-border-b">
                         <h1>活动组织单位</h1>
@@ -450,14 +233,36 @@
                 <a class="ui-icon-warn-block"></a>
             </div>
             <!-- putter:token的传递 -->
-            <input id="token" type="text" name="token" style="display:none ;" value="">
+            
 
             <div class="ui-btn-wrap">
                 <input id="submitbtn" type="button" class="ui-btn-lg ui-btn-primary" value="发布"/>
             </div>
+            <div class="ui-btn-wrap">
+                <input id="cancelbtn" type="button" class="ui-btn-lg ui-btn-danger" value="取消"/>
+            </div>
         </form>
     </div>
 
+</div>
+
+<div id="container">
+ <ul class="ui-list ui-border-tb">
+                 <li class="ui-border-t tag" id="1"><!--每个活动容器的框架-->
+                        <div class="ui-list-img">
+                            <span style="background-image:url(./img/sch/8669281_1511175313.jpg)"></span>
+                        </div>
+                     <div class="ui-list-info">
+                        <h1 class="ui-nowrap">6666</h1>
+                        <button class="ui-btn ui-btn-primary edit-btn">编辑</button>
+                        <button class="ui-btn ui-btn-danger delete-btn">删除</button>
+                        <p class="ui-nowrap" style="display: block;">11-21 20:51&emsp;需要抢票</p>
+                    </div>
+    
+                </li>
+
+            </ul>
+    
 </div>
 <!-- 温馨提示浮层模板 -->
 <div id="pointout-wrapper" class="ui-dialog pointout" style="position: absolute;left: 12.5%">
@@ -473,69 +278,44 @@
         </div>
     </div>
 </div>
-</li><!--发布新活动页面-->
-        <li><!--管理活动页面-->
+
             
-            <ul class="ui-list ui-border-tb">
-                 <li class="ui-border-t tag" id="1"><!--每个活动容器的框架-->
-                        <div class="ui-list-img">
-                            <span style="background-image:url(./img/sch/8669281_1511175313.jpg)"></span>
-                        </div>
-                     <div class="ui-list-info">
-                        <h1 class="ui-nowrap">6666</h1>
-                        <button class="ui-btn ui-btn-primary edit-btn">编辑</button>
-                        <button class="ui-btn ui-btn-danger delete-btn">删除</button>
-                        <p class="ui-nowrap" style="display: block;">11-21 20:51&emsp;需要抢票</p>
-                    </div>
-    
-                </li>
+           
 
-            </ul>
-            
-        </li><!--管理活动页面-->
-    </ul>
-
-
-</div>
 
 
 <script type="text/javascript">
      var $j=$.noConflict();//解决frozen,jq冲突
-    (function() {//初始化滑动条
-
-    var tab = new fz.Scroll('.ui-tab', {
-        role: 'tab',
-        autoplay: false,
-       
-    });
-
-    tab.on('beforeScrollStart', function(from, to) {
-        console.log(from, to);
-    });
-
-    tab.on('scrollEnd', function(curPage) {
-        console.log(curPage);
-    });
-
-})();
     $(".edit-btn").click(function(){//点击编辑按钮
-        $("#editDetail").dialog("show");
-        var thistag=$(this).parents(".tag")[0];
-        var id=thistag.getAttribute("id");
-        showEditDetail(id);
+        var id=$j(this).parents(".tag")[0].getAttribute("id");
+        
+        showEditBox(id);
     });
-    function showEditDetail(id)
-    {
-        $.ajax({
-            
-        });
-    }
+    
     //温馨提示浮层
     function pointout(note){
         $j("#pointout").html(note);
         $(".pointout").dialog("show");
 
     }
+    //参数为-1的为添加新活动，其他参数的为编辑活动
+    function showEditBox(id){
+        if(id==-1)//发布新活动
+        {
+        $j("#submitbtn").attr("value","发布");
+        
+        }
+        else{
+        $j("#submitbtn").attr("value","提交修改");
+        //$j("#EditBox").removeClass("hidden");
+        }
+        $j("#EditBox").removeClass("hidden");
+        $j("#EditBox").animate({"top":"0%"},500);
+        
+
+        
+    }
+
     //活动地点和名称检测是否输入，只支持数字、字母、汉字
     function checkText(txt) {
         switch(txt)
@@ -746,6 +526,14 @@
         }else{
             pointout("请检查输入,图片及以上的输入框是必选的,之后是可选的");
         }
+    });
+    //关闭编辑框
+    $j("#cancelbtn").click(function(){
+        $j("#EditBox").animate({"top":"100%"},500);
+        setTimeout(function(){
+           $j("#EditBox").addClass("hidden");  
+        },500);
+       
     });
     //德育分输入框的字符检查,只允许小数和整数
     $("#scoretxt").blur(function () {

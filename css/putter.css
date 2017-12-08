@@ -18,7 +18,18 @@
  	top:49px;
  	
  }
- #editDetail{
-	z-index: 999;/*避免把时间框盖住*/
+ #EditBox{
+ 	top:100%;
+ 	width: 100%;
+	position: fixed;
+	top: 0%;
+	z-index: 999;
+ }
+ .ui-dialog-cnt{
+ 	top:11%;
+ }
+ .hidden{
+ 	display: none;
+
  }
 
