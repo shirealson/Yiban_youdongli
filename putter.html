@@ -1,42 +1,6 @@
 <!-- * Created by jhz. * Date: 2017/11/6 * Time: 21:46 -->
-<html lang="zh-cn">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="format-detection" content="telephone=no">
-    <title>邮动历</title>
-    <!-- 自定义css -->
-    <link rel="stylesheet" href="./css/index.css">
-    <link rel="stylesheet" href="./css/department_handler.css">
-    <!-- FrozenUI模板样式 -->
-    <link rel="stylesheet" href="./css/frozen.css">
-    <script src="./lib/zepto.min.js"></script>
-    <script src="./js/frozen.js"></script>
-    <!-- 日期选项插件 -->
-    <script src="./js/jquery.1.7.2.min.js"></script>
-    <script src="./js/mobiscroll_002.js" type="text/javascript"></script>
-    <script src="./js/mobiscroll_004.js" type="text/javascript"></script>
-    <link href="./css/mobiscroll_002.css" rel="stylesheet" type="text/css">
-    <link href="./css/mobiscroll.css" rel="stylesheet" type="text/css">
-    <script src="./js/mobiscroll.js" type="text/javascript"></script>
-    <script src="./js/mobiscroll_003.js" type="text/javascript"></script>
-    <script src="./js/mobiscroll_005.js" type="text/javascript"></script>
-    <link href="./css/mobiscroll_003.css" rel="stylesheet" type="text/css">
-    <!-- 日历插件 -->
-    <link href="./css/datepicker.min.css" rel="stylesheet" type="text/css">
-    <script src="./js/datepicker.js"></script>
-    <script src="./js/datepicker.zh.js"></script>
-</head>
 <body ontouchstart>
-<div class="ui-tab admin">
-    
-        <ul class="ui-tab-nav ui-border-b">
-            <li class="current">发布新活动</li>
-            <li>管理已发活动</li>
-        </ul>
-    <ul class="ui-tab-content" style="width:200%;"><!--这里是选项卡content框架-->
-        <li class="current"><!--活动发布界面-->
-            <div id="container" style="height: 95%;">
+<div id="container" style="height: 95%;">
 
     <div class="ui-form ui-border-t">
         <form action="#" method="post" id="collect-activity-info" enctype="multipart/form-data">
@@ -260,48 +224,8 @@
         </div>
     </div>
 </div>
-</li><!--发布新活动-->
-        <li>
-            <ul class="ui-list ui-border-tb">
-                 <li class="ui-border-t tag" id="1"><!--每个活动容器的框架-->
-                        <div class="ui-list-img">
-                            <span style="background-image:url(./img/sch/8669281_1511175313.jpg)"></span>
-                        </div>
-                     <div class="ui-list-info">
-                        <h1 class="ui-nowrap">6666</h1>
-                        <button class="ui-btn edit-btn ui-btn-primary">编辑</button>
-                        <button class="ui-btn delete-btn ui-btn-danger">删除</button>
-                        <p class="ui-nowrap" style="display: block;">11-21 20:51&emsp;需要抢票</p>
-                    </div>
-    
-                </li>
-
-            </ul>
-        </li><!--管理活动-->
-    </ul>
-
-
-</div>
-
 
 <script type="text/javascript">
-    (function() {
-
-    var tab = new fz.Scroll('.ui-tab', {
-        role: 'tab',
-        autoplay: false,
-       
-    });
-
-    tab.on('beforeScrollStart', function(from, to) {
-        console.log(from, to);
-    });
-
-    tab.on('scrollEnd', function(curPage) {
-        console.log(curPage);
-    });
-
-})();//初始化滑动条
     //温馨提示浮层
     function pointout(note){
         $j("#pointout").html(note);
@@ -561,4 +485,3 @@
     });
 </script>
 </body>
-</html>
