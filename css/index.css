@@ -1,0 +1,59 @@
+/**
+ * Created by jhz
+ * Date: 2017/11/9
+ * Time: 10:35
+ * 主页样式表
+ */
+ /**
+ *Edit by szy
+ *Date 2017/11/20
+ *Time 23:40
+ */
+html{
+    height:100%;
+}
+.myacty-ticket,.myacty-place,.myacty-org{
+    padding-right: 60px;
+    display: inline;
+}
+.myacty-title{
+    padding-right: 40px;
+}
+.myacty-score{
+    padding-right: 78px;
+    display: inline;
+}
+.myacty-time{
+    display: inline;
+    position: relative;
+    left:18px;
+}
+body{
+    min-height:100%;
+    margin:0;
+    padding:0;
+    position:relative;
+}
+.cancel{
+    display: none;
+}
+#wrapper{
+    height:100%;
+}
+.ui-list-info h1 p{
+    text-align: center;
+}
+#footer{
+    width:100%;
+    position:absolute;
+    bottom:0;
+}
+#catalog{
+
+}
+#putter{
+
+}
+#calendar{
+
+}

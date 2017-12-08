@@ -1,0 +1,63 @@
+/**
+ * Created by jhz
+ * Date: 2017/11/6
+ * Time: 12:46
+ * 活动发布表单处理样式表
+ */
+::-webkit-scrollbar{
+    display:none;
+}
+body {
+    padding: 0;
+    margin: 0;
+    font-family: arial, verdana, sans-serif;
+    background: #fff;
+}
+#collect-activity-info{
+    position: relative;
+}
+.ui-icon-warn-block {
+    position: absolute;
+    top:0;
+    right:6px;
+}
+.ui-icon-checked-s{
+    position: absolute;
+    top:0;
+    right:6px;
+}
+/*选择日期框的样式*/
+.activity_time{
+    width: 100%;
+    padding: 5px;
+    margin: 5px 0;
+    border: 1px solid #aaa;
+    box-sizing: border-box;
+    border-radius: 5px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -webkit-border-radius: 5px;
+}
+
+.content {
+    padding: 15px;
+    background: #fff;
+}
+/*上传文件的样式*/
+.activity_img_wrap{
+    padding:0;
+    position: relative;
+}
+.activity_img{
+    padding-top:6px;
+    opacity:0;
+    display: inline-block;
+}
+.activity_img_wrap label{
+    position: absolute;
+    margin:auto;
+    /*height:100%;*/
+    /*width:100%;*/
+    top:15px;
+    left:0;
+}

@@ -1,0 +1,570 @@
+<!-- * Created by jhz. * Date: 2017/11/6 * Time: 21:46 -->
+
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>邮动历</title>
+    <!-- 自定义css -->
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/putter.css">
+    <link rel="stylesheet" href="./css/department_handler.css">
+    <!-- FrozenUI模板样式 -->
+    <link rel="stylesheet" href="./css/frozen.css">
+    <script src="./lib/zepto.min.js"></script>
+    <script src="./js/frozen.js"></script>
+    <!-- 日期选项插件 -->
+    <script src="./js/jquery.1.7.2.min.js"></script>
+    <script src="./js/mobiscroll_002.js" type="text/javascript"></script>
+    <script src="./js/mobiscroll_004.js" type="text/javascript"></script>
+    <link href="./css/mobiscroll_002.css" rel="stylesheet" type="text/css">
+    <link href="./css/mobiscroll.css" rel="stylesheet" type="text/css">
+    <script src="./js/mobiscroll.js" type="text/javascript"></script>
+    <script src="./js/mobiscroll_003.js" type="text/javascript"></script>
+    <script src="./js/mobiscroll_005.js" type="text/javascript"></script>
+    <link href="./css/mobiscroll_003.css" rel="stylesheet" type="text/css">
+    <!-- 日历插件 -->
+    <link href="./css/datepicker.min.css" rel="stylesheet" type="text/css">
+    <script src="./js/datepicker.js"></script>
+    <script src="./js/datepicker.zh.js"></script>
+</head>
+
+<body ontouchstart>
+<div class="ui-tab admin">
+    
+        <ul class="ui-tab-nav ui-border-b">
+            <li class="current">发布新活动</li>
+            <li>管理已发活动</li>
+        </ul>
+    <ul class="ui-tab-content" style="width:200%;">
+        <li class="current">
+            <div id="container" style="height: 95%;">
+
+    <div class="ui-form ui-border-t">
+        <form action="#" method="post" id="collect-activity-info" enctype="multipart/form-data">
+            <div class="ui-form-item ui-border-b">
+                <label for="activity_name">活动名称</label>
+                <input style="height:100%;" id="activity_name" name="activity_name" value="" placeholder="什么活动(0—0)" class="activity_info" type="text" onFocus="this.placeholder='';" onBlur="if(this.value == ''){this.placeholder = '什么活动(0—0)';} checkText('activity_name');"/><a class="ui-icon-warn-block"></a>
+            </div>
+
+            <div class="ui-form-item ui-border-b">
+                <label for="activity_place">活动地点</label>
+                <input style="height:100%;" id="activity_place" name="activity_place" value="" placeholder="在哪举办(0—0)" class="activity_info" type="text" onFocus="this.placeholder='';" onBlur="if(this.value == ''){this.placeholder = '在哪举办(0—0)';} checkText('activity_dest')"/><a class="ui-icon-warn-block"></a>
+            </div>
+
+            <div class="ui-form-item ui-border-b">
+                <label for="organization">组织单位</label>
+                <input style="height:100%;text-overflow: ellipsis;" id="organization" name="organization" class="organization" value="" readonly="readonly"   type="text" placeholder="请选择..."/>
+            </div>
+
+            <div class="ui-dialog formdetail" style="height: 1000px;">
+                <div class="ui-dialog-cnt" style="width: 19%;position: relative;left: 12.5%;top: -15%;">
+
+                    <header class="ui-dialog-hd ui-border-b">
+                        <h1>活动组织单位</h1>
+                        <!-- <i class="ui-dialog-close" data-role="button"></i> -->
+                    </header>
+
+                    <div class="ui-dialog-bd" style="overflow-x:hidden; overflow-y:auto; width:85%;height:280px;">
+
+                        <div class="ui-form-item ui-form-item-switch ui-border-b">
+                            <p>学校</p>
+                            <label class="ui-switch">
+                                <input  name="org[]" class="org" value="sch" type="checkbox">
+                            </label>
+                        </div>
+
+                        <div class="ui-form-item ui-form-item-switch ui-border-b">
+                            <p>信息与通信工程学院</p>
+                            <label class="ui-switch">
+                                <input  name="org[]" class="org" value="xt" type="checkbox">
+                            </label>
+                        </div>
+
+                        <div class="ui-form-item ui-form-item-switch ui-border-b">
+                            <p>计算机学院</p>
+                            <label class="ui-switch">
+                                <input  name="org[]" class="org" value="cs" type="checkbox">
+                            </label>
+                        </div>
+
+                        <div class="ui-form-item ui-form-item-switch ui-border-b">
+                            <p>电子工程学院</p>
+                            <label class="ui-switch">
+                                <input  name="org[]" class="org" value="ee" type="checkbox">
+                            </label>
+                        </div>
+
+                        <div class="ui-form-item ui-form-item-switch ui-border-b">
+                            <p>理学院</p>
+                            <label class="ui-switch">
+                                <input  name="org[]" class="org" value="lxy" type="checkbox">
+                            </label>
+                        </div>
+
+                        <div class="ui-form-item ui-form-item-switch ui-border-b">
+                            <p>自动化学院</p>
+                            <label class="ui-switch">
+                                <input  name="org[]" class="org" value="zdh" type="checkbox">
+                            </label>
+                        </div>
+
+                        <div class="ui-form-item ui-form-item-switch ui-border-b">
+                            <p>软件学院</p>
+                            <label class="ui-switch">
+                                <input  name="org[]" class="org" value="rj" type="checkbox">
+                            </label>
+                        </div>
+
+                        <div class="ui-form-item ui-form-item-switch ui-border-b">
+                            <p>数字媒体与设计艺术学院</p>
+                            <label class="ui-switch">
+                                <input  name="org[]" class="org" value="shm" type="checkbox">
+                            </label>
+                        </div>
+
+                        <div class="ui-form-item ui-form-item-switch ui-border-b">
+                            <p>现代邮政学院</p>
+                            <label class="ui-switch">
+                                <input  name="org[]" class="org" value="yz" type="checkbox">
+                            </label>
+                        </div>
+
+                        <div class="ui-form-item ui-form-item-switch ui-border-b">
+                            <p>网络空间安全学院</p>
+                            <label class="ui-switch">
+                                <input  name="org[]" class="org" value="wa" type="checkbox">
+                            </label>
+                        </div>
+
+                        <div class="ui-form-item ui-form-item-switch ui-border-b">
+                            <p>经济管理学院</p>
+                            <label class="ui-switch">
+                                <input  name="org[]" class="org" value="jg" type="checkbox">
+                            </label>
+                        </div>
+
+                        <div class="ui-form-item ui-form-item-switch ui-border-b">
+                            <p>国际学院</p>
+                            <label class="ui-switch">
+                                <input  name="org[]" class="org" value="gy" type="checkbox">
+                            </label>
+                        </div>
+                        <div class="ui-form-item ui-form-item-switch ui-border-b">
+                            <p>人文学院</p>
+                            <label class="ui-switch">
+                                <input  name="org[]" class="org" value="rw" type="checkbox">
+                            </label>
+                        </div>
+
+                        <div class="ui-form-item ui-form-item-switch ui-border-b">
+                            <p>马克思主义学院</p>
+                            <label class="ui-switch">
+                                <input  name="org[]" class="org" value="mks" type="checkbox">
+                            </label>
+                        </div>
+
+                    </div>
+
+                    <div class="ui-dialog-ft">
+                        <button type="button" id="orgok" data-role="button">确定</button>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="ui-form-item ui-border-b">
+                <label>开始时间</label>
+                <input name="activity_start" class="activity_time" value="" readonly="readonly"   type="text"  placeholder="请选择..."/>
+            </div>
+
+            <div class="ui-form-item ui-border-b">
+                <label>结束时间</label>
+                <input name="activity_end" class="activity_time" value="" readonly="readonly"  type="text"  placeholder="请选择..."/>
+            </div>
+
+            <div class="ui-btn-wrap activity_img_wrap">
+                <input name="activity_img" value="" id="activity_img" class="ui-btn-lg activity_img" type="file" accept="image/png, image/jpeg, image/gif, image/jpg"/>
+                <label class="ui-btn-lg" for="activity_img">选择图片</label>
+            </div>
+
+            <div class="ui-form-item ui-form-item-switch ui-border-b">
+                <p>
+                    是否有德育分
+                </p>
+                <label class="ui-switch">
+                    <input name="score" id="score" type="checkbox" value="score"/>
+                </label>
+            </div>
+
+            <div class="ui-form-item ui-form-item-order ui-border-b addscore"  style="display: none;font-size: 14px;">
+                <label for="scoretxt">德育分分值</label>
+                <input style="height:100%;" name="scoretxt" id="scoretxt" type="text" value="" placeholder="整数/小数"/>
+                <a class="ui-icon-warn-block"></a>
+            </div>
+
+            <div class="ui-form-item ui-form-item-switch ui-border-b">
+                <p>
+                    是否需要收集报名学生信息
+                </p>
+                <label class="ui-switch">
+                    <input name="info" id="info" type="checkbox" value="info"/>
+                </label>
+            </div>
+
+            <div class="ui-form-item ui-form-item-order ui-border-b addlink" style="display: none;font-size: 14px;">
+                <label for="infotxt">报名链接</label>
+                <input style="height:100%;" name="infotxt" id="infotxt" type="text" value="" placeholder="易班/问卷星/腾讯问卷">
+                <a class="ui-icon-warn-block"></a>
+
+            </div>
+
+            <div class="ui-form-item ui-form-item-switch ui-border-b">
+                <p>
+                    是否需要抢票
+                </p>
+                <label class="ui-switch">
+                    <input name="ticket" id="ticket" type="checkbox" value="ticket"/>
+                </label>
+            </div>
+
+            <div class="ui-form-item ui-form-item-order ui-border-b addticket" style="display: none;font-size: 14px;">
+                <label for="ticket-time">抢票时间</label>
+                <input style="height:85%;"  class="activity_time" name="ticket-time" id="ticket-time" type="text" readonly="readonly" value="" placeholder="请选择...">
+            </div>
+
+            <div class="ui-form-item ui-form-item-order ui-border-b addticket" style="display: none;font-size: 14px;">
+                <label for="ticket-link">抢票链接</label>
+                <input style="height:100%;" name="ticket-link" id="ticket-link" type="text" value="" placeholder="易班/问卷星/腾讯问卷">
+                <a class="ui-icon-warn-block"></a>
+            </div>
+            <!-- putter:token的传递 -->
+            <input id="token" type="text" name="token" style="display:none ;" value="">
+
+            <div class="ui-btn-wrap">
+                <input id="submitbtn" type="button" class="ui-btn-lg ui-btn-primary" value="发布"/>
+            </div>
+        </form>
+    </div>
+
+</div>
+<!-- 温馨提示浮层模板 -->
+<div id="pointout-wrapper" class="ui-dialog pointout" style="position: absolute;left: 12.5%">
+    <div class="ui-dialog-cnt">
+        <div class="ui-dialog-bd">
+            <div>
+                <h1 style="text-align: center;">温馨提示</h1>
+                <div id="pointout"></div>
+            </div>
+        </div>
+        <div class="ui-dialog-ft ui-btn-group">
+            <button type="button" data-role="button"  class="select" id="dialogButton<%=i%>">我知道了</button>
+        </div>
+    </div>
+</div>
+</li><!--发布新活动页面-->
+        <li>
+            <ul class="ui-list ui-border-tb">
+                 <li class="ui-border-t tag" id="1"><!--每个活动容器的框架-->
+                        <div class="ui-list-img">
+                            <span style="background-image:url(./img/sch/8669281_1511175313.jpg)"></span>
+                        </div>
+                     <div class="ui-list-info">
+                        <h1 class="ui-nowrap">6666</h1>
+                        <button class="ui-btn edit-btn">编辑</button>
+                        <button class="ui-btn delete-btn">删除</button>
+                        <p class="ui-nowrap" style="display: block;">11-21 20:51&emsp;需要抢票</p>
+                    </div>
+    
+                </li>
+
+            </ul>
+            
+        </li><!--管理活动页面-->
+    </ul>
+
+
+</div>
+
+
+<script type="text/javascript">
+    (function() {
+
+    var tab = new fz.Scroll('.ui-tab', {
+        role: 'tab',
+        autoplay: false,
+       
+    });
+
+    tab.on('beforeScrollStart', function(from, to) {
+        console.log(from, to);
+    });
+
+    tab.on('scrollEnd', function(curPage) {
+        console.log(curPage);
+    });
+
+})();
+    //温馨提示浮层
+    function pointout(note){
+        $j("#pointout").html(note);
+        $(".pointout").dialog("show");
+
+    }
+    //活动地点和名称检测是否输入，只支持数字、字母、汉字
+    function checkText(txt) {
+        switch(txt)
+        {
+            case 'activity_name':
+                var activity = document.getElementsByClassName("activity_info")[0];
+                inputTxt = activity.value.trim();
+                if ( inputTxt != "" ){
+                    if( inputTxt.match(/[^\u4e00-\u9fa5a-zA-Z\d]/g) ) {
+                        pointout("只支持数字、英文、汉字,而且我们默认去掉所有空格哦~");
+                        activity.nextSibling.className="ui-icon-warn-block";
+                    }
+                    else {
+                        if( !$("#activity_name").hasClass("ok") ){
+                            $("#activity_name").addClass("ok");
+                        }
+                        activity.nextSibling.className="ui-icon-checked-s";
+                    }
+                }else{
+                    if( $("#activity_name").hasClass("ok") ){
+                        $("#activity_name").removeClass("ok");
+                    }
+                    activity.nextSibling.className="ui-icon-warn-block";
+                }
+                break;
+            case 'activity_dest':
+                var activity = document.getElementsByClassName("activity_info")[1];
+                inputTxt = activity.value.trim();
+                if ( inputTxt != "" ){
+                    if( inputTxt.match(/[^\u4e00-\u9fa5a-zA-Z\d]/g) ) {
+                        pointout("只支持数字、英文、汉字,而且我们默认去掉所有空格哦~");
+                        activity.nextSibling.className="ui-icon-warn-block";
+                    }
+                    else {
+                        if( !$("#activity_place").hasClass("ok") ){
+                            $("#activity_place").addClass("ok");
+                        }
+                        activity.nextSibling.className="ui-icon-checked-s";
+                    }
+                }else{
+                    if( $("#activity_place").hasClass("ok") ){
+                        $("#activity_place").removeClass("ok");
+                    }
+                    activity.nextSibling.className="ui-icon-warn-block";
+                }
+                break;
+        }
+    }
+    //选择发布机构信息
+    $(".organization").tap(function(){
+        $(".formdetail").dialog("show");
+    });
+    //当点击确定完成活动单位的选择时,没有选的复选框值赋""
+    $("#orgok").tap(function () {
+        var orgs = "";
+        $(".org").each(function () {
+            if( $(this).attr("checked") == true ) {
+                orgs = orgs + paseOrg( $(this).val() ) + " ";
+            }
+        });
+        $(".organization").val(orgs);
+        if( orgs != "" ){
+            if( !$("#organization").hasClass("ok") ){
+                $("#organization").addClass("ok");
+            }
+        }else if ( orgs == "" ){
+            if( $("#organization").hasClass("ok") ){
+                $("#organization").removeClass("ok");
+            }
+        }
+    });
+    //活动时间的初始化设置
+    $j(function () {
+        var currYear = (new Date()).getFullYear();
+        var opt={};
+        opt.datetime = {preset : 'datetime'};
+        opt.default = {
+            theme: 'android-ics light', //皮肤样式
+            display: 'modal', //显示方式
+            mode: 'scroller', //日期选择模式
+            dateFormat: 'yyyy-mm-dd',
+            lang: 'zh',
+            showNow: true,
+            nowText: "今天",
+            startYear: currYear, //开始年份
+            endYear: currYear + 10 //结束年份
+        };
+        var optDateTime = $j.extend(opt['datetime'], opt['default']);
+        $j(".activity_time").mobiscroll(optDateTime).datetime(optDateTime);
+
+        /*  label覆盖input，用修改label的内容来修改上传文件input的样式 */
+        $j("#activity_img").change(function(){
+            var fileName="";
+            fileName = $j(this).val().split("\\").pop();
+            fileName=fileName.substring(0, fileName.lastIndexOf("."));
+            $j(this).next().html(fileName);
+            if( $j(this).next().html() == "" ){
+                $j(this).next().html("选择图片");
+                $j(this).removeClass("ok");
+            }
+        });
+    });
+    //需要收集学生信息,设置德育分时,添加抢票连接时,显示相应的隐藏的框
+    $j("#score").change(function () {
+        if( $(this).attr("checked") == true) {
+            $j(".addscore").slideDown(500);
+        }else{
+            $j(".addscore").slideUp(500);
+            $j("#scoretxt").val("");
+            if( $j("#scoretxt").hasClass("ok1") ){
+                $j("#scoretxt").removeClass("ok1");
+            }
+            $j("#scoretxt").next().removeClass("ui-icon-checked-s");
+            $j("#scoretxt").next().addClass("ui-icon-warn-block");
+        }
+    });
+    $j("#info").change(function () {
+        if( $(this).attr("checked") == true) {
+            $j(".addlink").slideDown(500);
+        }else{
+            $j(".addlink").slideUp(500);
+            $j("#infotxt").val("");
+            if( $j("#infotxt").hasClass("ok1") ){
+                $j("#infotxt").removeClass("ok1");
+            }
+            $j("#infotxt").next().removeClass("ui-icon-checked-s");
+            $j("#infotxt").next().addClass("ui-icon-warn-block");
+        }
+    });
+    $j("#ticket").change(function () {
+        if( $(this).attr("checked") == true) {
+            $j(".addticket").slideDown(500);
+        }else{
+            $j(".addticket").slideUp(500);
+            $j("#ticket-link").val("");
+            $j("#ticket-time").val("");
+            if( $j("#ticket-link,#ticket-time").hasClass("ok1") ){
+                $j("#ticket-link,#ticket-time").removeClass("ok1");
+            }
+            $j("#ticket-link").next().removeClass("ui-icon-checked-s");
+            $j("#ticket-link").next().addClass("ui-icon-warn-block");
+        }
+    });
+    //活动图片加Ok类
+    $("#activity_img").change(function () {
+        if( $(this).val() != "" ){
+            $(this).addClass("ok");
+        }
+    });
+    //检测是不是全部正确输入
+    function testAll() {
+        var counter = 0;
+        $(".ok").each(function () {
+            counter ++;
+        });
+        if( $(".activity_time[name='activity_start']").val() != "" && $(".activity_time[name='activity_end']").val() != "" ){
+            counter += 2;
+        }
+        //console.log(counter);
+        if( counter == 6 ){
+            if( $("#score").attr("checked") == true ){
+                if( !$("#scoretxt").hasClass("ok1")){
+                    return false;
+                }
+            }
+            if( $("#info").attr("checked") == true ){
+                if( !$("#infotxt").hasClass("ok1")){
+                    return false;
+                }
+            }
+            if( $("#ticket").attr("checked") == true ){
+                if( !$("#ticket-link").hasClass("ok1") || $("#ticket-time").val()=="" ){
+                    return false;
+                }
+            }
+            return true;
+        }
+    }
+    //当点击提交按钮时
+    $j("#submitbtn").click(function () {
+        if( testAll() ){
+            $j(".ok").removeClass("ok");
+            $j(".ok1").removeClass("ok1");
+            $j.ajax(
+                {
+                    url: './department_handler.php',
+                    type: 'POST',
+                    cache: false,
+                    data: new FormData($j('#collect-activity-info')[0]),
+                    processData: false,
+                    contentType: false,
+                    success : function(data) {
+                        $j("#submitbtn").attr("value","发布成功!");
+                        setTimeout(function () {
+                            location.reload();
+                        },500);
+                    },
+                    complete : function() {
+                        location.reload();
+                        console.log("----------putter-complete--------------")
+                    },
+                    error: function() {
+                        location.reload();
+                        console.log("----------putter-error--------------")
+                    }
+                }
+            );
+        }else{
+            pointout("请检查输入,图片及以上的输入框是必选的,之后是可选的");
+        }
+    });
+    //德育分输入框的字符检查,只允许小数和整数
+    $("#scoretxt").blur(function () {
+        if( $(this).val() != "" ){
+            if( $(this).val().match(/^-?\d+\.?\d*$/) ) {
+                $(this).next().removeClass("ui-icon-warn-block");
+                $(this).next().addClass("ui-icon-checked-s");
+                if( !$(this).hasClass("ok1") ){
+                    $(this).addClass("ok1");
+                }
+            }
+            else {
+                if( $(this).hasClass("ok1") ){
+                    $(this).removeClass("ok1");
+                }
+                $(this).next().removeClass("ui-icon-checked-s");
+                $(this).next().addClass("ui-icon-warn-block");
+            }
+        }
+
+    });
+    //报名链接的输入框
+    $("#infotxt,#ticket-link").change(function () {
+        if( $(this).val() != "" ){
+            var urlreg = new RegExp("^https://www.wjx.cn/|^https://q.yiban.cn/|^https://wj.qq.com/");
+            if( urlreg.test( $(this).val() ) ) {
+                if( !$(this).hasClass("ok1") ){
+                    $(this).addClass("ok1");
+                }
+                $(this).next().removeClass("ui-icon-warn-block");
+                $(this).next().addClass("ui-icon-checked-s");
+            }
+            else {
+                if( $(this).hasClass("ok1") ){
+                    $(this).removeClass("ok1");
+                }
+                $(this).next().removeClass("ui-icon-checked-s");
+                $(this).next().addClass("ui-icon-warn-block");
+            }
+        }
+    });
+    //活动管理界面代码
+    
+</script>
+</body>
+</html>
