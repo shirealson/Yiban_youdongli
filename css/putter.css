@@ -7,20 +7,18 @@
  	position: absolute;
  	color:white;
  	right:5px;
- 	background-image: none;
  }
  .edit-btn{
 	top:8px;
-	background-color: #3BA5F6;
+	
 	
  }
- .edit-btn:active{
- 	background-color: #7AC1F8;
- }
+ 
  .delete-btn{
  	top:49px;
- 	background-color: #F63B3F;
+ 	
  }
- .delete-btn:active{
- 	background-color: #F77578;
+ #editDetail{
+	z-index: 999;/*避免把时间框盖住*/
  }
+
